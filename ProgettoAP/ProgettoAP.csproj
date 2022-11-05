@@ -56,6 +56,60 @@
     <Compile Include="Elementi\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\CEOForm\FormAcquistaCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormAcquistaCEO.Designer.cs">
+      <DependentUpon>FormAcquistaCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormAggiuntaEventoCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormAggiuntaEventoCEO.Designer.cs">
+      <DependentUpon>FormAggiuntaEventoCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormHomeCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormHomeCEO.Designer.cs">
+      <DependentUpon>FormHomeCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormImpostazioniCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormImpostazioniCEO.Designer.cs">
+      <DependentUpon>FormImpostazioniCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormInfoEventiCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormInfoEventiCEO.Designer.cs">
+      <DependentUpon>FormInfoEventiCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormProfiloCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormProfiloCEO.Designer.cs">
+      <DependentUpon>FormProfiloCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormRicercaCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormRicercaCEO.Designer.cs">
+      <DependentUpon>FormRicercaCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormInterfacciaCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInterfacciaCEO.Designer.cs">
+      <DependentUpon>FormInterfacciaCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormInterfacciaUtente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInterfacciaUtente.Designer.cs">
+      <DependentUpon>FormInterfacciaUtente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,11 +122,41 @@
     <Compile Include="Forms\Registrazione.Designer.cs">
       <DependentUpon>Registrazione.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\UserForm\FormListaEventi.cs">
+    <Compile Include="Forms\UserForm\FormAcquistaBiglietto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\UserForm\FormListaEventi.Designer.cs">
-      <DependentUpon>FormListaEventi.cs</DependentUpon>
+    <Compile Include="Forms\UserForm\FormAcquistaBiglietto.Designer.cs">
+      <DependentUpon>FormAcquistaBiglietto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForm\FormHomeUtente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForm\FormHomeUtente.Designer.cs">
+      <DependentUpon>FormHomeUtente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForm\FormImpostazioniUtente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForm\FormImpostazioniUtente.Designer.cs">
+      <DependentUpon>FormImpostazioniUtente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormListaEventiCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormListaEventiCEO.Designer.cs">
+      <DependentUpon>FormListaEventiCEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForm\FormProfiloUtente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForm\FormProfiloUtente.Designer.cs">
+      <DependentUpon>FormProfiloUtente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForm\FormRicercaUtente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForm\FormRicercaUtente.Designer.cs">
+      <DependentUpon>FormRicercaUtente.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Ceo_organizzazioni.cs" />
     <Compile Include="Models\Controller.cs" />
@@ -80,14 +164,56 @@
     <Compile Include="Models\Utente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CEOForm\FormAcquistaCEO.resx">
+      <DependentUpon>FormAcquistaCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEOForm\FormAggiuntaEventoCEO.resx">
+      <DependentUpon>FormAggiuntaEventoCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEOForm\FormHomeCEO.resx">
+      <DependentUpon>FormHomeCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEOForm\FormImpostazioniCEO.resx">
+      <DependentUpon>FormImpostazioniCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEOForm\FormInfoEventiCEO.resx">
+      <DependentUpon>FormInfoEventiCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEOForm\FormProfiloCEO.resx">
+      <DependentUpon>FormProfiloCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEOForm\FormRicercaCEO.resx">
+      <DependentUpon>FormRicercaCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormInterfacciaCEO.resx">
+      <DependentUpon>FormInterfacciaCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormInterfacciaUtente.resx">
+      <DependentUpon>FormInterfacciaUtente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Registrazione.resx">
       <DependentUpon>Registrazione.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\UserForm\FormListaEventi.resx">
-      <DependentUpon>FormListaEventi.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\UserForm\FormAcquistaBiglietto.resx">
+      <DependentUpon>FormAcquistaBiglietto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForm\FormHomeUtente.resx">
+      <DependentUpon>FormHomeUtente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForm\FormImpostazioniUtente.resx">
+      <DependentUpon>FormImpostazioniUtente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEOForm\FormListaEventiCEO.resx">
+      <DependentUpon>FormListaEventiCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForm\FormProfiloUtente.resx">
+      <DependentUpon>FormProfiloUtente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForm\FormRicercaUtente.resx">
+      <DependentUpon>FormRicercaUtente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
