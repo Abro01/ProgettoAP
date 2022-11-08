@@ -30,9 +30,6 @@ namespace ProgettoAP.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblTitolo = new System.Windows.Forms.Label();
             this.pnlTitolo = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -45,49 +42,20 @@ namespace ProgettoAP.Forms
             this.tbPsw = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.lblTitoloDescrizione = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.bClear = new ProgettoAP.Elementi.RJButton();
             this.bLogin = new ProgettoAP.Elementi.RJButton();
             this.pnlTitolo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 366);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Email:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 418);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password:";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(124, 578);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(80, 20);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "linkLabel1";
-            // 
             // lblTitolo
             // 
             this.lblTitolo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitolo.AutoSize = true;
-            this.lblTitolo.Font = new System.Drawing.Font("Century", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitolo.ForeColor = System.Drawing.Color.White;
             this.lblTitolo.Location = new System.Drawing.Point(616, 40);
             this.lblTitolo.Name = "lblTitolo";
-            this.lblTitolo.Size = new System.Drawing.Size(255, 47);
+            this.lblTitolo.Size = new System.Drawing.Size(234, 46);
             this.lblTitolo.TabIndex = 8;
             this.lblTitolo.Text = "AP TICKET";
             // 
@@ -171,6 +139,7 @@ namespace ProgettoAP.Forms
             this.lbRegistrazione.TabIndex = 36;
             this.lbRegistrazione.TabStop = true;
             this.lbRegistrazione.Text = "Registrati";
+            this.lbRegistrazione.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbRegistrazione_LinkClicked_1);
             // 
             // label3
             // 
@@ -232,15 +201,6 @@ namespace ProgettoAP.Forms
             this.lblTitoloDescrizione.TabIndex = 31;
             this.lblTitoloDescrizione.Text = "LOGIN";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(423, 550);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 67);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "LOGIN";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // bClear
             // 
             this.bClear.BackColor = System.Drawing.Color.White;
@@ -267,7 +227,7 @@ namespace ProgettoAP.Forms
             this.bLogin.FlatAppearance.BorderSize = 0;
             this.bLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.bLogin.Location = new System.Drawing.Point(575, 435);
+            this.bLogin.Location = new System.Drawing.Point(574, 435);
             this.bLogin.Name = "bLogin";
             this.bLogin.Radius_bordo = 40;
             this.bLogin.Size = new System.Drawing.Size(166, 60);
@@ -276,6 +236,7 @@ namespace ProgettoAP.Forms
             this.bLogin.Text = "LOGIN";
             this.bLogin.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.bLogin.UseVisualStyleBackColor = false;
+            this.bLogin.Click += new System.EventHandler(this.bLogin_Click_1);
             // 
             // Login
             // 
@@ -283,7 +244,6 @@ namespace ProgettoAP.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1478, 744);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.bClear);
             this.Controls.Add(this.bLogin);
             this.Controls.Add(this.cbCeo);
@@ -294,9 +254,6 @@ namespace ProgettoAP.Forms
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lblTitoloDescrizione);
             this.Controls.Add(this.pnlTitolo);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Login";
             this.Text = "Login";
@@ -308,9 +265,6 @@ namespace ProgettoAP.Forms
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label lblTitolo;
         private System.Windows.Forms.Panel pnlTitolo;
         private System.Windows.Forms.Button btnMinimize;
@@ -325,6 +279,5 @@ namespace ProgettoAP.Forms
         private System.Windows.Forms.Label lblTitoloDescrizione;
         private Elementi.RJButton bLogin;
         private Elementi.RJButton bClear;
-        private System.Windows.Forms.Button button1;
     }
 }

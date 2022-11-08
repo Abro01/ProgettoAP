@@ -31,7 +31,7 @@ namespace ProgettoAP.Forms
             }
         }
 
-        private void checkBoxOrg_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxOrg_CheckedChanged_1(object sender, EventArgs e)
         {
             if (checkBoxOrg.Checked)
             {
@@ -49,7 +49,7 @@ namespace ProgettoAP.Forms
             }
         }
 
-        private void btnReg_Click(object sender, EventArgs e)
+        private void btnReg_Click_1(object sender, EventArgs e)
         {
             if (checkBoxOrg.Checked)
             {

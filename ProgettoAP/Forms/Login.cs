@@ -19,7 +19,7 @@ namespace ProgettoAP.Forms
             InitializeComponent();
         }
 
-        private void bLogin_Click(object sender, EventArgs e)
+        private void bLogin_Click_1(object sender, EventArgs e)
         {
             bool ceoLogin = cbCeo.Checked;
             string email = tbEmail.Text;
@@ -80,7 +80,7 @@ namespace ProgettoAP.Forms
 
         }
 
-        private void lbRegistrazione_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lbRegistrazione_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Registrazione reg = new Registrazione();
             reg.Show();
