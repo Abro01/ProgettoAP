@@ -38,16 +38,16 @@ namespace ProgettoAP.Forms
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.cbCEO = new System.Windows.Forms.CheckBox();
+            this.cbCeo = new System.Windows.Forms.CheckBox();
             this.lbRegistrazione = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbPswd = new System.Windows.Forms.TextBox();
+            this.tbPsw = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.lblTitoloDescrizione = new System.Windows.Forms.Label();
-            this.bLogin = new ProgettoAP.Elementi.RJButton();
-            this.bClear = new ProgettoAP.Elementi.RJButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.bClear = new ProgettoAP.Elementi.RJButton();
+            this.bLogin = new ProgettoAP.Elementi.RJButton();
             this.pnlTitolo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -147,17 +147,17 @@ namespace ProgettoAP.Forms
             this.btnClose.TabIndex = 9;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
-            // cbCEO
+            // cbCeo
             // 
-            this.cbCEO.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbCEO.AutoSize = true;
-            this.cbCEO.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.cbCEO.Location = new System.Drawing.Point(711, 402);
-            this.cbCEO.Name = "cbCEO";
-            this.cbCEO.Size = new System.Drawing.Size(106, 24);
-            this.cbCEO.TabIndex = 37;
-            this.cbCEO.Text = "CEO login";
-            this.cbCEO.UseVisualStyleBackColor = true;
+            this.cbCeo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbCeo.AutoSize = true;
+            this.cbCeo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.cbCeo.Location = new System.Drawing.Point(711, 402);
+            this.cbCeo.Name = "cbCeo";
+            this.cbCeo.Size = new System.Drawing.Size(106, 24);
+            this.cbCeo.TabIndex = 37;
+            this.cbCeo.Text = "CEO login";
+            this.cbCeo.UseVisualStyleBackColor = true;
             // 
             // lbRegistrazione
             // 
@@ -199,16 +199,16 @@ namespace ProgettoAP.Forms
             this.label4.TabIndex = 34;
             this.label4.Text = "EMAIL";
             // 
-            // tbPswd
+            // tbPsw
             // 
-            this.tbPswd.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbPswd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(118)))), ((int)(((byte)(135)))));
-            this.tbPswd.Location = new System.Drawing.Point(711, 363);
-            this.tbPswd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbPswd.Name = "tbPswd";
-            this.tbPswd.Size = new System.Drawing.Size(240, 26);
-            this.tbPswd.TabIndex = 33;
-            this.tbPswd.UseSystemPasswordChar = true;
+            this.tbPsw.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbPsw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(118)))), ((int)(((byte)(135)))));
+            this.tbPsw.Location = new System.Drawing.Point(711, 363);
+            this.tbPsw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbPsw.Name = "tbPsw";
+            this.tbPsw.Size = new System.Drawing.Size(240, 26);
+            this.tbPsw.TabIndex = 33;
+            this.tbPsw.UseSystemPasswordChar = true;
             // 
             // tbEmail
             // 
@@ -232,23 +232,14 @@ namespace ProgettoAP.Forms
             this.lblTitoloDescrizione.TabIndex = 31;
             this.lblTitoloDescrizione.Text = "LOGIN";
             // 
-            // bLogin
+            // button1
             // 
-            this.bLogin.BackColor = System.Drawing.Color.White;
-            this.bLogin.BackgroundColor = System.Drawing.Color.White;
-            this.bLogin.Colore_bordo = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.bLogin.FlatAppearance.BorderSize = 0;
-            this.bLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.bLogin.Location = new System.Drawing.Point(575, 435);
-            this.bLogin.Name = "bLogin";
-            this.bLogin.Radius_bordo = 40;
-            this.bLogin.Size = new System.Drawing.Size(166, 60);
-            this.bLogin.Size_bordo = 2;
-            this.bLogin.TabIndex = 38;
-            this.bLogin.Text = "LOGIN";
-            this.bLogin.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.bLogin.UseVisualStyleBackColor = false;
+            this.button1.Location = new System.Drawing.Point(423, 550);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 67);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "LOGIN";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // bClear
             // 
@@ -268,14 +259,23 @@ namespace ProgettoAP.Forms
             this.bClear.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.bClear.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // bLogin
             // 
-            this.button1.Location = new System.Drawing.Point(423, 550);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 67);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "LOGIN";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bLogin.BackColor = System.Drawing.Color.White;
+            this.bLogin.BackgroundColor = System.Drawing.Color.White;
+            this.bLogin.Colore_bordo = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.bLogin.FlatAppearance.BorderSize = 0;
+            this.bLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.bLogin.Location = new System.Drawing.Point(575, 435);
+            this.bLogin.Name = "bLogin";
+            this.bLogin.Radius_bordo = 40;
+            this.bLogin.Size = new System.Drawing.Size(166, 60);
+            this.bLogin.Size_bordo = 2;
+            this.bLogin.TabIndex = 38;
+            this.bLogin.Text = "LOGIN";
+            this.bLogin.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.bLogin.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
@@ -286,11 +286,11 @@ namespace ProgettoAP.Forms
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bClear);
             this.Controls.Add(this.bLogin);
-            this.Controls.Add(this.cbCEO);
+            this.Controls.Add(this.cbCeo);
             this.Controls.Add(this.lbRegistrazione);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbPswd);
+            this.Controls.Add(this.tbPsw);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lblTitoloDescrizione);
             this.Controls.Add(this.pnlTitolo);
@@ -316,11 +316,11 @@ namespace ProgettoAP.Forms
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.CheckBox cbCEO;
+        private System.Windows.Forms.CheckBox cbCeo;
         private System.Windows.Forms.LinkLabel lbRegistrazione;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbPswd;
+        private System.Windows.Forms.TextBox tbPsw;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label lblTitoloDescrizione;
         private Elementi.RJButton bLogin;
