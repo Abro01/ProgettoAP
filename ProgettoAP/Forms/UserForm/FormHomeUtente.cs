@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProgettoAP.Elementi;
 
 namespace ProgettoAP.Forms.UserForm
 {
@@ -15,6 +16,27 @@ namespace ProgettoAP.Forms.UserForm
         public FormHomeUtente()
         {
             InitializeComponent();
+        }
+        private void FormHomeUtente_Load(object sender, EventArgs e)
+        {
+            LoadTheme();
+        }
+
+        private void LoadTheme()
+        {
+            foreach (Control btns in this.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+
+            lblTitoloDesktop.ForeColor = ThemeColor.SecondaryColor;
+            lblDescrizioneDesktop.ForeColor = ThemeColor.PrimaryColor;
         }
     }
 }

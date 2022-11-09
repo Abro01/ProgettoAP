@@ -23,6 +23,7 @@ namespace ProgettoAP.Forms
         public FormInterfacciaUtente()
         {
             InitializeComponent();
+            random = new Random();
             btnCloseChildForm.Visible = false;
             this.Text = string.Empty;
             this.ControlBox = false;
