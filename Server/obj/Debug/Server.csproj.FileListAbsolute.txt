@@ -112,7 +112,6 @@ C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\bin\Debug\System.M
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.csproj.AssemblyReference.cache
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.exe

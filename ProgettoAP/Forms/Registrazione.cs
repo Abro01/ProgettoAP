@@ -63,7 +63,12 @@ namespace ProgettoAP.Forms
                     try
                     {
                         if (Controller.RegistraCeo(tbNome.Text, tbCognome.Text, tbEmail.Text, tbPassword.Text, nomeOrg.Remove(0, 1)))
+                        {
                             MessageBox.Show("Registrazione effettuata con successo");
+                            Login l = new Login();
+                            l.Show();
+                            this.Hide();
+                        }
                     }
                     catch
                     {
@@ -83,7 +88,12 @@ namespace ProgettoAP.Forms
                     try
                     {
                         if (Controller.RegistraUtente(tbNome.Text, tbCognome.Text, tbUser.Text, tbEmail.Text, tbPassword.Text))
+                        {
                             MessageBox.Show("Registrazione Effettuata con successo");
+                            Login l = new Login();
+                            l.Show();
+                            this.Hide();
+                        }
                     }
                     catch
                     {

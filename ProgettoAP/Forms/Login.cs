@@ -37,8 +37,8 @@ namespace ProgettoAP.Forms
                         {
                             Sessione.Utente = utente;
                             MessageBox.Show("Login utente effettuato con successo: " + utente.Nome);
-                            FormListaEventi fle = new FormListaEventi();
-                            fle.Show();
+                            FormInterfacciaUtente home = new FormInterfacciaUtente();              
+                            home.ShowDialog();
                             this.Hide();
                         }
 
@@ -85,6 +85,7 @@ namespace ProgettoAP.Forms
             Registrazione reg = new Registrazione();
             reg.Show();
             this.Hide();
+
         }
     }
 }
