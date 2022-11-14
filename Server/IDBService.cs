@@ -33,6 +33,6 @@ namespace Server
         bool Registrazione(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg);
 
         [OperationContract]
-        DataTable EventiDisponibili();
+        List<EventoS> EventiDisponibili();
     }
 }

@@ -159,20 +159,23 @@ namespace Server
             }
             return false;
         }
-        public DataTable EventiDisponibili()
+        public List<EventoS> EventiDisponibili()
         {
             try
             {
                 string query = "SELECT e.ID, e.nome, e.genere, e.luogo, e.Nposti " +
                                "FROM eventi e, organizzazione o, ceo_organizzazioni c " +
                                "WHERE c.CODOrganizzazione=o.ID AND o.ID=e.CODOrganizzazione ";  //MOSTRO TUTTI GLI EVENTI DISPONIBILI
-                
-                return Interazione.GetEventi(query);
+                return EventoS.GeneraListaEventi(Interazione.GetInfo(query));    
             }
             catch(Exception ex)
             {
                 Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA RICERCA DEGLI EVENTI DISPONIBILI: " + ex.ToString());
                 Console.ReadLine();
+            }
+            finally
+            {
+                Console.WriteLine("Dati per gli eventi disponibili recuperati con successo");
             }
             return null;
         }

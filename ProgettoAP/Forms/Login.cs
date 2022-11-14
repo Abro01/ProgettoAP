@@ -36,7 +36,6 @@ namespace ProgettoAP.Forms
                         if (utente != null)
                         {
                             Sessione.Utente = utente;
-                            MessageBox.Show("Login utente effettuato con successo: " + utente.Nome);
                             FormInterfacciaUtente home = new FormInterfacciaUtente();              
                             home.ShowDialog();
                             this.Hide();

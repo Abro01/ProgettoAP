@@ -162,6 +162,7 @@
     </Compile>
     <Compile Include="Models\Ceo_organizzazioni.cs" />
     <Compile Include="Models\Controller.cs" />
+    <Compile Include="Models\Evento.cs" />
     <Compile Include="Models\Sessione.cs" />
     <Compile Include="Models\Utente.cs" />
     <Compile Include="Program.cs" />
@@ -236,10 +237,8 @@
     <None Include="Connected Services\ServiceReference\item2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference\item3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\DataSources\Server.Models.Ceo_organizzazioniS.datasource" />
+    <None Include="Properties\DataSources\Server.Models.EventoS.datasource" />
     <None Include="Properties\DataSources\Server.Models.UtenteS.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">

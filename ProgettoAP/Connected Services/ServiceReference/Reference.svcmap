@@ -22,12 +22,11 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/Server/DBService/" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DBService.wsdl" MetadataType="Wsdl" ID="63e98274-d6df-4547-b188-ca02ec87c83f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?wsdl" />
-    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="d6c61ffb-c67b-41fc-9c12-92eabcbcfcd4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd1" />
-    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="6bf05ffb-bc42-4e57-8ce8-f465c3e4d3c0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd0" />
-    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="94246257-3855-431a-85e0-53a951c4828f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd3" />
-    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="0c74ce99-8eb6-4fe6-947a-9086b6862f72" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd2" />
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="9c957817-2033-4e1b-ac00-58442ce34563" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?disco" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="0c74ce99-8eb6-4fe6-947a-9086b6862f72" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd2" />
+    <MetadataFile FileName="DBService.wsdl" MetadataType="Wsdl" ID="63e98274-d6df-4547-b188-ca02ec87c83f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?wsdl" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="6bf05ffb-bc42-4e57-8ce8-f465c3e4d3c0" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd0" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="d6c61ffb-c67b-41fc-9c12-92eabcbcfcd4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

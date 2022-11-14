@@ -70,8 +70,6 @@ namespace Server.Models
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);
                 DataRow[] righe = dt.Select();
-
-               
                 return dt;
             }
             catch(Exception ex)

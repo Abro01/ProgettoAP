@@ -95,6 +95,7 @@
             this.Controls.Add(this.dtRisultati);
             this.Name = "FormRicercaUtente";
             this.Text = "FormRicercaUtente";
+            this.Load += new System.EventHandler(this.FormRicercaUtente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtRisultati)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

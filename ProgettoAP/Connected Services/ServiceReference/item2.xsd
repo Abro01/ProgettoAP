@@ -22,4 +22,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Ceo_organizzazioniS" nillable="true" type="tns:Ceo_organizzazioniS" />
+  <xs:complexType name="ArrayOfEventoS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventoS" nillable="true" type="tns:EventoS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventoS" nillable="true" type="tns:ArrayOfEventoS" />
+  <xs:complexType name="EventoS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodOrg" type="xs:int" />
+      <xs:element minOccurs="0" name="Descrizione" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Genere" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Luogo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NPosti" type="xs:int" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventoS" nillable="true" type="tns:EventoS" />
 </xs:schema>

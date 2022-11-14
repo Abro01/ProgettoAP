@@ -102,11 +102,15 @@ namespace ProgettoAP.Models
             }
             return false;
         }
-        public static DataTable GetEventi()
+        public static List<Evento> GetEventi()
         {
             try
             {
-                return Sessione.ServerDB.EventiDisponibili();
+                List<Evento> listaEventi= Evento.EventoSToEvento(Sessione.ServerDB.EventiDisponibili().ToList());
+                if(listaEventi != null)
+                {
+                    return listaEventi;
+                }
             }
             catch
             {

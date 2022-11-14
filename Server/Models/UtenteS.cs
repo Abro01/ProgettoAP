@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server.Models
-{       //Utente visibile nel server  Server
+{       //Utente visibile nel Server
     public class UtenteS
     {
         //Attributi
@@ -58,7 +58,7 @@ namespace Server.Models
 
             catch   
             {
-                MessageBox.Show(s);
+                MessageBox.Show("Errore nella generazione di un utente con il metodo Genera utente nel Server");
                 Application.Exit();
             }
             return u;
