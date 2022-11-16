@@ -56,6 +56,18 @@ namespace ProgettoAP.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/EventiDisponibili", ReplyAction="http://tempuri.org/IDBService/EventiDisponibiliResponse")]
         System.Threading.Tasks.Task<Server.Models.EventoS[]> EventiDisponibiliAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/GetOrganizzazioneFromId", ReplyAction="http://tempuri.org/IDBService/GetOrganizzazioneFromIdResponse")]
+        Server.Models.OrganizzazioneS GetOrganizzazioneFromId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/GetOrganizzazioneFromId", ReplyAction="http://tempuri.org/IDBService/GetOrganizzazioneFromIdResponse")]
+        System.Threading.Tasks.Task<Server.Models.OrganizzazioneS> GetOrganizzazioneFromIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/GetBigliettoFromIdEvento", ReplyAction="http://tempuri.org/IDBService/GetBigliettoFromIdEventoResponse")]
+        Server.Models.BigliettoS GetBigliettoFromIdEvento(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/GetBigliettoFromIdEvento", ReplyAction="http://tempuri.org/IDBService/GetBigliettoFromIdEventoResponse")]
+        System.Threading.Tasks.Task<Server.Models.BigliettoS> GetBigliettoFromIdEventoAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -139,6 +151,22 @@ namespace ProgettoAP.ServiceReference {
         
         public System.Threading.Tasks.Task<Server.Models.EventoS[]> EventiDisponibiliAsync() {
             return base.Channel.EventiDisponibiliAsync();
+        }
+        
+        public Server.Models.OrganizzazioneS GetOrganizzazioneFromId(int id) {
+            return base.Channel.GetOrganizzazioneFromId(id);
+        }
+        
+        public System.Threading.Tasks.Task<Server.Models.OrganizzazioneS> GetOrganizzazioneFromIdAsync(int id) {
+            return base.Channel.GetOrganizzazioneFromIdAsync(id);
+        }
+        
+        public Server.Models.BigliettoS GetBigliettoFromIdEvento(int id) {
+            return base.Channel.GetBigliettoFromIdEvento(id);
+        }
+        
+        public System.Threading.Tasks.Task<Server.Models.BigliettoS> GetBigliettoFromIdEventoAsync(int id) {
+            return base.Channel.GetBigliettoFromIdEventoAsync(id);
         }
     }
 }

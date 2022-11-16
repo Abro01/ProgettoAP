@@ -34,5 +34,11 @@ namespace Server
 
         [OperationContract]
         List<EventoS> EventiDisponibili();
+
+        [OperationContract]
+        OrganizzazioneS GetOrganizzazioneFromId(int id);
+
+        [OperationContract]
+        BigliettoS GetBigliettoFromIdEvento(int id);
     }
 }

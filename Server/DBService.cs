@@ -127,6 +127,64 @@ namespace Server
             return "";
         }
 
+        public BigliettoS GetBigliettoFromIdEvento(int id)
+        {
+            string q = "SELECT b.*" +
+                       "FROM biglietti b " +
+                       "WHERE b.CODEvento = '" + id + "'";
+            try
+            {
+                string r = Interazione.GetInfo(q);
+                if (r != null)
+                {
+                    return BigliettoS.GeneraBiglietto(r);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                if (Interazione.Connessione != null) //Controllo che la connessione sia stata aperta
+                    Interazione.Connessione.Close(); //Chiudo la connessione
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA RICERCA DEL BIGLIETTO: " + ex.ToString());
+                Console.ReadLine();
+
+            }
+            finally
+            {
+                Console.WriteLine("DATI RICHIESTI PER IL BIGLIETTO AL SERVER CON SUCCESSO:");
+            }
+            return null;
+        }
+
+        public OrganizzazioneS GetOrganizzazioneFromId(int id)
+        {
+            string q = "SELECT o.* " +
+                      "FROM organizzazione o " +
+                      "WHERE o.ID = '" + id +"'";
+            try
+            {
+                string r = Interazione.GetInfo(q);
+                if (r != null)
+                {
+                    return OrganizzazioneS.GeneraOrganizzazione(r);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                if (Interazione.Connessione != null) //Controllo che la connessione sia stata aperta
+                    Interazione.Connessione.Close(); //Chiudo la connessione
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA RICERCA DI UN ORGANIZZAZIONE: " + ex.ToString());
+                Console.ReadLine();
+
+            }
+            finally
+            {
+                Console.WriteLine("DATI RICHIESTI PER L'ORGANIZZAZIONE AL SERVER CON SUCCESSO");
+            }
+            return null;
+        }
+
         public bool Registrazione(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg)
         {
             try
@@ -163,9 +221,7 @@ namespace Server
         {
             try
             {
-                string query = "SELECT e.ID, e.nome, e.genere, e.luogo, e.Nposti " +
-                               "FROM eventi e, organizzazione o, ceo_organizzazioni c " +
-                               "WHERE c.CODOrganizzazione=o.ID AND o.ID=e.CODOrganizzazione ";  //MOSTRO TUTTI GLI EVENTI DISPONIBILI
+                string query = "SELECT ID, Nome, Genere, Luogo, Descrizione, Nposti, CODOrganizzazione FROM eventi";  //MOSTRO TUTTI GLI EVENTI DISPONIBILI
                 return EventoS.GeneraListaEventi(Interazione.GetInfo(query));    
             }
             catch(Exception ex)

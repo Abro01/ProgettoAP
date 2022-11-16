@@ -101,4 +101,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetOrganizzazioneFromId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrganizzazioneFromIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetOrganizzazioneFromIdResult" nillable="true" type="q4:OrganizzazioneS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBigliettoFromIdEvento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBigliettoFromIdEventoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="GetBigliettoFromIdEventoResult" nillable="true" type="q5:BigliettoS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

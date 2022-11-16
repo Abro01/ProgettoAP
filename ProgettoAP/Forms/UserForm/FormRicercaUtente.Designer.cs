@@ -49,7 +49,7 @@
             // txtNomeEvento
             // 
             this.txtNomeEvento.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNomeEvento.Location = new System.Drawing.Point(445, 90);
+            this.txtNomeEvento.Location = new System.Drawing.Point(439, 89);
             this.txtNomeEvento.Name = "txtNomeEvento";
             this.txtNomeEvento.Size = new System.Drawing.Size(404, 26);
             this.txtNomeEvento.TabIndex = 22;
@@ -64,6 +64,7 @@
             this.dtRisultati.RowHeadersWidth = 62;
             this.dtRisultati.Size = new System.Drawing.Size(1000, 348);
             this.dtRisultati.TabIndex = 21;
+            this.dtRisultati.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtRisultati_CellContentClick);
             // 
             // bCerca
             // 
@@ -82,6 +83,7 @@
             this.bCerca.Text = "CERCA";
             this.bCerca.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.bCerca.UseVisualStyleBackColor = false;
+            this.bCerca.Click += new System.EventHandler(this.bCerca_Click);
             // 
             // FormRicercaUtente
             // 

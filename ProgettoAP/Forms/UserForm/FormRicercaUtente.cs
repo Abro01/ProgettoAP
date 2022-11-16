@@ -24,14 +24,9 @@ namespace ProgettoAP.Forms.UserForm
             try
             {
                 List<Evento> listaEventi = Controller.GetEventi();
-                foreach(Evento evento in listaEventi)
-                {
-
-                }
-
-                dtRisultati.DataSource = dt;
+                dtRisultati.DataSource = listaEventi;
                 DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-                // dtRisultati.Columns.Add(btn);
+                dtRisultati.Columns.Add(btn);
                 btn.HeaderText = "Click Data";
                 btn.Text = "ACQUISTA";      //AGGIUNGO UNA COLONNA CON IL PULSANTE ACQUISTA PER OGNI EVENTO
                 btn.Name = "btn";
@@ -41,6 +36,31 @@ namespace ProgettoAP.Forms.UserForm
             {
                 MessageBox.Show("ERRORE ! FormListaEventi: errore nel caricamento degli eventi disponibili");
                 Application.Exit();
+            }
+        }
+
+        private void bCerca_Click(object sender, EventArgs e)
+        {
+            
+            (dtRisultati.DataSource as DataTable).DefaultView.RowFilter = String.Format("Nome like '%{0}%'", txtNomeEvento.Text);
+
+        }
+
+        private void dtRisultati_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string idEvento = dtRisultati.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+
+            List<Evento> listaEventi = Controller.GetEventi();
+
+            foreach (Evento evento in listaEventi)
+            {
+                if(evento.Id == Int16.Parse(idEvento))
+                {
+                    Sessione.Evento = evento;
+                    FormAcquistaBiglietto fab = new FormAcquistaBiglietto();
+                    fab.Show();
+                    this.Hide();
+                }
             }
         }
     }

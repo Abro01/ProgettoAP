@@ -74,7 +74,43 @@ namespace ProgettoAP.Models
             string s = Sessione.ServerDB.GetNomiOrganizzazioni();
             return s;
         }
+
+        public static Organizzazione GetOrganizzazioneFromID(int id)
+        {
+            try
+            {
+                Organizzazione o = Organizzazione.OrganizzazioneSToOrganizzazione(Sessione.ServerDB.GetOrganizzazioneFromId(id));
+                if(o.Id != 0)
+                {
+                    return o;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! MEtodo Get OrganizzazioneFromID nel controller");
+                Application.Exit();
+            }
+            return null;
+        }
         
+        public static Biglietto GetBigliettoFromIdEvento(int id)
+        {
+            try
+            {
+                Biglietto b = Biglietto.BigliettoSToBiglietto(Sessione.ServerDB.GetBigliettoFromIdEvento(id));
+                if(b.Id != 0)
+                {
+                    return b;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo GetBigliettoFromIdevento nel controller");
+                Application.Exit();
+            }
+            return null;
+        }
+
         public static bool RegistraUtente(string nome, string cognome, string username, string email, string password)
         {
             try

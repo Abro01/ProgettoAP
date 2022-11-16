@@ -40,4 +40,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EventoS" nillable="true" type="tns:EventoS" />
+  <xs:complexType name="OrganizzazioneS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PIva" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrganizzazioneS" nillable="true" type="tns:OrganizzazioneS" />
+  <xs:complexType name="BigliettoS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodEvento" type="xs:int" />
+      <xs:element minOccurs="0" name="Costo" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BigliettoS" nillable="true" type="tns:BigliettoS" />
 </xs:schema>

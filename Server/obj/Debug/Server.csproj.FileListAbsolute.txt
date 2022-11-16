@@ -116,4 +116,3 @@ C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.c
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.exe
 C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.pdb
-C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\Server\obj\Debug\Server.csproj.AssemblyReference.cache

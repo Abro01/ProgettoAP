@@ -58,6 +58,7 @@
             this.cbPremium.TabIndex = 55;
             this.cbPremium.Text = "Premium( +50€  a biglietto)";
             this.cbPremium.UseVisualStyleBackColor = true;
+            this.cbPremium.CheckedChanged += new System.EventHandler(this.cbPremium_CheckedChanged_1);
             // 
             // lblCosto
             // 
@@ -98,6 +99,7 @@
             this.cbNumBig.Name = "cbNumBig";
             this.cbNumBig.Size = new System.Drawing.Size(180, 28);
             this.cbNumBig.TabIndex = 52;
+            this.cbNumBig.SelectedIndexChanged += new System.EventHandler(this.cbNumBig_SelectedIndexChanged);
             // 
             // lblScelta
             // 
