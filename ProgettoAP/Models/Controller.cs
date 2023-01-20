@@ -155,6 +155,20 @@ namespace ProgettoAP.Models
             }
             return null;
         }
+
+        public static bool AcquistaBiglietti(int idBig, int idUtente, bool isPremium, int idEvento, int numBig) 
+        {
+            try
+            {
+                return Sessione.ServerDB.AcquistaBiglietto(idBig, idUtente, isPremium, idEvento, numBig);
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo AcquistaBiglietti nel controller");
+                Application.Exit();
+            }
+            return false;
+        }
     }
 }
 

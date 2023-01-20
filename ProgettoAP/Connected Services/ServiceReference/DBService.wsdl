@@ -61,6 +61,12 @@
   <wsdl:message name="IDBService_GetBigliettoFromIdEvento_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBigliettoFromIdEventoResponse" />
   </wsdl:message>
+  <wsdl:message name="IDBService_AcquistaBiglietto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcquistaBiglietto" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AcquistaBiglietto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcquistaBigliettoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDBService">
     <wsdl:operation name="Connessione">
       <wsdl:input wsaw:Action="http://tempuri.org/IDBService/Connessione" message="tns:IDBService_Connessione_InputMessage" />
@@ -97,6 +103,10 @@
     <wsdl:operation name="GetBigliettoFromIdEvento">
       <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetBigliettoFromIdEvento" message="tns:IDBService_GetBigliettoFromIdEvento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetBigliettoFromIdEventoResponse" message="tns:IDBService_GetBigliettoFromIdEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AcquistaBiglietto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AcquistaBiglietto" message="tns:IDBService_AcquistaBiglietto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AcquistaBigliettoResponse" message="tns:IDBService_AcquistaBiglietto_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDBService" type="tns:IDBService">
@@ -175,6 +185,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetBigliettoFromIdEvento">
       <soap:operation soapAction="http://tempuri.org/IDBService/GetBigliettoFromIdEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AcquistaBiglietto">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AcquistaBiglietto" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

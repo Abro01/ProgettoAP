@@ -235,5 +235,39 @@ namespace Server
             }
             return null;
         }
+
+        public bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig)
+        {
+            try
+            {
+                string queryPosti = "SELECT NPosti " +
+                                    "FROM Eventi " +
+                                    "WHERE ID = '" + idEvento + "'";
+
+                string r = Interazione.GetInfo(queryPosti);
+                List<string> info = r.Split('-').ToList();
+                int posti = Int16.Parse(info.ElementAt(0));
+                int bigPremium = Convert.ToInt32(isPremium);
+                if (posti < numBig)
+                    return false;
+                string queryAggPosti = "UPDATE eventi SET Nposti = Nposti - " + numBig + " WHERE ID = '" + idEvento + "'";
+                Interazione.WritingQuery(queryAggPosti);
+
+                string query = $"INSERT INTO `utenti_biglietti` (`ID`, `Premium`, `CODUtente`, `CODBiglietto`) VALUES ('','" + bigPremium + "','" + idUtente + "','" + idBig + "')";
+
+                for (int i = 1; i < numBig; i++)
+                {
+                    Interazione.WritingQuery(query);
+                }
+
+                return Interazione.WritingQuery(query);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA CREAZIONE DI UN BIGLIETTO_UTENTE: " + ex.ToString());
+                Console.ReadLine();
+            }
+            return false;
+        }
     }
 }

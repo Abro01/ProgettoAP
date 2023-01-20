@@ -21,6 +21,7 @@ namespace ProgettoAP.Forms.UserForm
             lblGenere2.Text = Sessione.Evento.Genere;
             lblDescrizione2.Text = Sessione.Evento.Descrizione;
             lblPosti2.Text = Sessione.Evento.NPosti.ToString();
+            lblLuogo2.Text = Sessione.Evento.Luogo;
             Organizzazione o = Controller.GetOrganizzazioneFromID(Sessione.Evento.CodOrg);
             lblOrganizzazione2.Text = o.Nome;
             Biglietto b = Controller.GetBigliettoFromIdEvento(o.Id);
@@ -64,6 +65,29 @@ namespace ProgettoAP.Forms.UserForm
                 int costo = Sessione.Biglietto.Costo * numBig;
                 lPrezzo.Text = costo.ToString();
             }
+        }
+
+        private void bAcquista_Click(object sender, EventArgs e)
+        {
+            string app = cbNumBig.Text;
+            int numBig = Int32.Parse(app);//Prendo il numero di biglietti che l'utente vuole acquistare
+            try
+            {
+                bool isAcquistato = Controller.AcquistaBiglietti(Sessione.Biglietto.Id, Sessione.Utente.Id, cbPremium.Checked, Sessione.Evento.Id, numBig);
+                if (isAcquistato)
+                {
+                    MessageBox.Show("BIGLIETTI/O ACQUISTATI/O PERFETTAMENTE");
+                }
+                else
+                {
+                    MessageBox.Show("IMPOSSIBILE ACQUISTARE LA QUANTITA' RICHIESTA DI BIGLIETTI, DIMINUISCA IL NUMERO E RIPROVI");
+                }
+            }
+            catch
+            {
+
+            }
+            
         }
     }
 }

@@ -41,7 +41,6 @@ CREATE TABLE eventi(
 CREATE TABLE biglietti(
     ID int AUTO_INCREMENT NOT NULL,
     Costo int NOT NULL,
-    Premium ENUM("SI", "NO"),
     CODEvento int NOT NULL,
     PRIMARY KEY(ID),
     FOREIGN KEY(CODEvento) REFERENCES eventi(ID)

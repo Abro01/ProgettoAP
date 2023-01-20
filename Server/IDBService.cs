@@ -40,5 +40,8 @@ namespace Server
 
         [OperationContract]
         BigliettoS GetBigliettoFromIdEvento(int id);
+
+        [OperationContract]
+        bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig);
     }
 }

@@ -129,4 +129,22 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="AcquistaBiglietto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idBig" type="xs:int" />
+        <xs:element minOccurs="0" name="idUtente" type="xs:int" />
+        <xs:element minOccurs="0" name="isPremium" type="xs:boolean" />
+        <xs:element minOccurs="0" name="idEvento" type="xs:int" />
+        <xs:element minOccurs="0" name="numBig" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcquistaBigliettoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AcquistaBigliettoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

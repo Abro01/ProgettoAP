@@ -29,9 +29,9 @@ namespace ProgettoAP.Forms
             {
                 try
                 {
-                    if (Controller.EffettuaLoginUtente(email, password)) ///Effettuo il login
+                    if (Controller.EffettuaLoginUtente(email, password)) ///Controllo l'esistenza di questo utente sul db
                     {
-                        Utente utente = Controller.getInfoUser(email, password);
+                        Utente utente = Controller.getInfoUser(email, password);//Se l'utente esiste e la psw è corretta allora effettua il login 
 
                         if (utente != null)
                         {
@@ -40,10 +40,9 @@ namespace ProgettoAP.Forms
                             home.ShowDialog();
                             this.Hide();
                         }
-
-                        else
-                            MessageBox.Show("Username o password non validi");
                     }
+                    else
+                        MessageBox.Show("Username o password non validi");
                 }
 
                 catch
@@ -58,17 +57,17 @@ namespace ProgettoAP.Forms
             {
                 try
                 {
-                    if (Controller.EffettuaLoginCeo(email, password))
+                    if (Controller.EffettuaLoginCeo(email, password)) // Controllo l'esistenza del ceo nel db 
                     {
-                        Ceo_organizzazioni ceo = Controller.getInfoCeo(email, password);
+                        Ceo_organizzazioni ceo = Controller.getInfoCeo(email, password); // Se il ceo esiste allora effettuo il login 
                         if (ceo != null)
                         {
                             Sessione.Ceo = ceo;
                             MessageBox.Show("Login ceo effettuato con successo: " + ceo.Nome);
                         }
-                        else
-                            MessageBox.Show("Username o password non validi");
                     }
+                    else
+                        MessageBox.Show("Username o password non validi");
                 }
                 catch
                 {

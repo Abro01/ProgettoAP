@@ -167,6 +167,7 @@
     <Compile Include="Models\Organizzazione.cs" />
     <Compile Include="Models\Sessione.cs" />
     <Compile Include="Models\Utente.cs" />
+    <Compile Include="Models\Utenti_biglietti.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CEOForm\FormAcquistaCEO.resx">
