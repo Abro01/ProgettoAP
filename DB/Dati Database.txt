@@ -23,10 +23,8 @@ INSERT INTO `ceo_organizzazioni` (`ID`, `Nome`, `Cognome`, `Email`, `Password`, 
 --Eventi
 INSERT INTO `eventi`(`ID`, `Nome`, `Genere`, `Luogo`, `Descrizione`, `Nposti`, `CODOrganizzazione`) VALUES ('','Firenze Rock','Musica','Firenze','Musica e magia','750','1');
 INSERT INTO `eventi`(`ID`, `Nome`, `Genere`, `Luogo`, `Descrizione`, `Nposti`, `CODOrganizzazione`) VALUES ('','Pub del gaming','Videogiochi','Polignano','Videogiocare in compagnia','50','2');
-INSERT INTO `eventi`(`ID`, `Nome`, `Genere`, `Luogo`, `Descrizione`, `Nposti`, `CODOrganizzazione`) VALUES ('','Valta-Berceto','Sport','Borgo Val Di Taro','Calcio d inizio ore 19','250','1');
 
 
 --Biglietti
 INSERT INTO `biglietti`(`ID`, `Costo`, `CODEvento`) VALUES ('','50','1');
 INSERT INTO `biglietti`(`ID`, `Costo`, `CODEvento`) VALUES ('','15','2');
-INSERT INTO `biglietti`(`ID`, `Costo`, `CODEvento`) VALUES ('','5','3');
