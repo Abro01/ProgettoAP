@@ -24,6 +24,7 @@ namespace ProgettoAP.Forms.UserForm
             DataTable dt = new DataTable();
             try
             {
+
                 //dt = Controller.GetEventi();
                 dtRisultati.DataSource = dt;
                 DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
@@ -39,6 +40,11 @@ namespace ProgettoAP.Forms.UserForm
                 Application.Exit();
             }
            
+
+        }
+
+        private void bAggiungi_Click(object sender, EventArgs e)
+        {
 
         }
     }

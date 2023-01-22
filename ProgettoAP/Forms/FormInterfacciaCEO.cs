@@ -113,7 +113,24 @@ namespace ProgettoAP.Forms
 
         private void btnLista_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.CEOForm.ListaEventi(), sender);
+            OpenChildForm(new Forms.CEOForm.FormListaCEO(), sender);
+        }
+
+        private void btnProfilo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.CEOForm.FormProfiloCEO(), sender);
+        }
+
+        private void btnImpostazioni_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.CEOForm.FormImpostazioniCEO(), sender);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login logout = new Login();
+            logout.Show();
+            this.Hide();
         }
     }
 }

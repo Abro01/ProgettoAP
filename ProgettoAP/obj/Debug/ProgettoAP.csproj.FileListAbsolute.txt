@@ -210,3 +210,4 @@ C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.cspro
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CopyComplete
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.exe
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.pdb
+C:\Users\Ale\Documents\GitHub\ProgettoAPDef\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.CEOForm.FormListaCEO.resources

@@ -52,6 +52,7 @@
             this.bCerca.Text = "CERCA";
             this.bCerca.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.bCerca.UseVisualStyleBackColor = false;
+            this.bCerca.Click += new System.EventHandler(this.bCerca_Click);
             // 
             // lblNomeEvento
             // 
@@ -95,6 +96,7 @@
             this.Controls.Add(this.dtRisultati);
             this.Name = "FormRicercaCEO";
             this.Text = "FormRicercaCEO";
+            this.Load += new System.EventHandler(this.FormRicercaCEO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtRisultati)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

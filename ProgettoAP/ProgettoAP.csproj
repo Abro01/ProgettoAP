@@ -88,6 +88,12 @@
     <Compile Include="Forms\CEOForm\FormInfoEventiCEO.Designer.cs">
       <DependentUpon>FormInfoEventiCEO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CEOForm\FormListaCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormListaCEO.Designer.cs">
+      <DependentUpon>FormListaCEO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CEOForm\FormProfiloCEO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CEOForm\FormInfoEventiCEO.resx">
       <DependentUpon>FormInfoEventiCEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CEOForm\FormListaCEO.resx">
+      <DependentUpon>FormListaCEO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CEOForm\FormProfiloCEO.resx">
       <DependentUpon>FormProfiloCEO.cs</DependentUpon>
