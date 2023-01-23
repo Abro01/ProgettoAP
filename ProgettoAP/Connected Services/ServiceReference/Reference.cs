@@ -74,6 +74,24 @@ namespace ProgettoAP.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/AcquistaBiglietto", ReplyAction="http://tempuri.org/IDBService/AcquistaBigliettoResponse")]
         System.Threading.Tasks.Task<bool> AcquistaBigliettoAsync(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/EventiFromCeo", ReplyAction="http://tempuri.org/IDBService/EventiFromCeoResponse")]
+        Server.Models.EventoS[] EventiFromCeo(int codOrg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/EventiFromCeo", ReplyAction="http://tempuri.org/IDBService/EventiFromCeoResponse")]
+        System.Threading.Tasks.Task<Server.Models.EventoS[]> EventiFromCeoAsync(int codOrg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/UtentiAquirenti", ReplyAction="http://tempuri.org/IDBService/UtentiAquirentiResponse")]
+        Server.Models.UtenteS[] UtentiAquirenti(int idEvento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/UtentiAquirenti", ReplyAction="http://tempuri.org/IDBService/UtentiAquirentiResponse")]
+        System.Threading.Tasks.Task<Server.Models.UtenteS[]> UtentiAquirentiAsync(int idEvento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/AggiungiEvento", ReplyAction="http://tempuri.org/IDBService/AggiungiEventoResponse")]
+        bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/AggiungiEvento", ReplyAction="http://tempuri.org/IDBService/AggiungiEventoResponse")]
+        System.Threading.Tasks.Task<bool> AggiungiEventoAsync(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -181,6 +199,30 @@ namespace ProgettoAP.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> AcquistaBigliettoAsync(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo) {
             return base.Channel.AcquistaBigliettoAsync(idBig, idUtente, isPremium, idEvento, numBig, isCeo);
+        }
+        
+        public Server.Models.EventoS[] EventiFromCeo(int codOrg) {
+            return base.Channel.EventiFromCeo(codOrg);
+        }
+        
+        public System.Threading.Tasks.Task<Server.Models.EventoS[]> EventiFromCeoAsync(int codOrg) {
+            return base.Channel.EventiFromCeoAsync(codOrg);
+        }
+        
+        public Server.Models.UtenteS[] UtentiAquirenti(int idEvento) {
+            return base.Channel.UtentiAquirenti(idEvento);
+        }
+        
+        public System.Threading.Tasks.Task<Server.Models.UtenteS[]> UtentiAquirentiAsync(int idEvento) {
+            return base.Channel.UtentiAquirentiAsync(idEvento);
+        }
+        
+        public bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo) {
+            return base.Channel.AggiungiEvento(nome, genere, luogo, descrizione, nPosti, codOrg, costo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AggiungiEventoAsync(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo) {
+            return base.Channel.AggiungiEventoAsync(nome, genere, luogo, descrizione, nPosti, codOrg, costo);
         }
     }
 }

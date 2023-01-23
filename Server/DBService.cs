@@ -281,5 +281,77 @@ namespace Server
             }
             return false;
         }
+
+        public List<EventoS> EventiFromCeo(int codOrg)//RICERCO TRAMITE QUERY TUTTI GLI EVENTI CREATI DALL'ORGANIZZAZIONE DEL CEO LOGGATO
+        {
+            try
+            {
+                string query = "SELECT ID, Nome, Genere, Luogo, Descrizione, Nposti, CODOrganizzazione FROM eventi WHERE CodOrganizzazione = " +codOrg;  //MOSTRO TUTTI GLI EVENTI DEL CEO
+                return EventoS.GeneraListaEventi(Interazione.GetInfo(query));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA RICERCA DEGLI EVENTI DA UN CEO: " + ex.ToString());
+                Console.ReadLine();
+            }
+            finally
+            {
+                Console.WriteLine("Dati per gli eventi disponibili da un ceo recuperati con successo");
+            }
+            return null;
+        }
+
+        public List<UtenteS> UtentiAquirenti(int idEvento)
+        {
+            try
+            {
+                string query =  "SELECT u.ID, u.Nome, u.Cognome, u.Username, u.Email, u.Password " +
+                                "FROM utenti u, biglietti b, utenti_biglietti ub " +    //CERCO LE INFORMAZIONI DEGLI UTENTI CHE CHE HANNO ACQUISTATO DEI  BIGLIETTI PER UN CERTO EVENTO SELEZIONATO
+                                "WHERE b.ID=ub.CODBiglietto AND ub.CODUtente=u.ID " +   //TRAMITE L'ID DELL'EVENTO
+                                "AND b.CODEvento = '" + idEvento + "'";
+                return UtenteS.GeneraListaUtenti(Interazione.GetInfo(query));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA RICERCA DEGLI UTENTI ACQUIRENTI DI UN CERTO EVENTO: " + ex.ToString());
+                Console.ReadLine();
+            }
+            finally
+            {
+                Console.WriteLine("Dati per gli eventi disponibili da un ceo recuperati con successo");
+            }
+            return null;
+        }
+
+        public bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo)
+        {
+            try
+            {
+                string queryE = $"INSERT INTO `eventi` (`ID`, `Nome`, `Genere`, `Luogo`, `Descrizione`, `NPosti`, `CODOrganizzazione`) VALUES('', '" + nome +  "','" + genere  + "','" + luogo + "','" + descrizione + "','" + nPosti + "','" + codOrg + "')";
+                if (Interazione.WritingQuery(queryE))//SE LA QUERY PER INSERIRE UN EVENTO VA A BUON FINE SI EFFETTUA LA QUERY PER L'INSERIMENTO DEL BIGLIETTO COLLEGATO ALLO STESSO
+                {
+                    string queryId = "SELECT ID " + //PRENDO L'ID DELL'EVENTO APPENA INSERITO TRAMITE LE SUE INFORMAZIONI 
+                                    "FROM Eventi " +
+                                    "WHERE nome = '" + nome + "' AND Genere = '" + genere + "' AND Descrizione = '" + descrizione +"'" ;
+
+                    string r = Interazione.GetInfo(queryId);
+                    List<string> info = r.Split('-').ToList();
+                    int idEvento = Int16.Parse(info.ElementAt(0));
+
+                    string queryB = $"INSERT INTO `biglietti` (`ID`, `Costo`, `CODEvento`) VALUES('', '" + costo + "', '" + idEvento + "')"; //INSERISCE IL BIGLIETTO COLLEGATO ALL'EVENTO APPENA CREATO
+                    return Interazione.WritingQuery(queryB);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER L'AGGIUNTA DI UN EVENTO PER UN ORGANIZZAZIONE: " + ex.ToString());
+                Console.ReadLine();
+            }
+            finally
+            {
+                Console.WriteLine("Dati per gli eventi disponibili da un ceo recuperati con successo");
+            }
+            return false;
+        }
     }
 }

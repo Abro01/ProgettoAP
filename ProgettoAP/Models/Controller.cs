@@ -27,7 +27,7 @@ namespace ProgettoAP.Models
         {
             try
             {
-                Utente utente = Utente.UtenteSToUUtente(Sessione.ServerDB.InfoUtente(email, psw));
+                Utente utente = Utente.UtenteSToUtente(Sessione.ServerDB.InfoUtente(email, psw));
                 if (utente.Id != 0)
                 {
                     return utente;
@@ -165,6 +165,57 @@ namespace ProgettoAP.Models
             catch                                                                                               //il numero di biglietti che desidero acquistare e se il mio account è un account ceo o utente normale
             {
                 MessageBox.Show("ERRORE! Metodo AcquistaBiglietti nel controller");
+                Application.Exit();
+            }
+            return false;
+        }
+
+        public static List<Evento> GetEventiFromCeo(int codOrg)
+        {
+            try
+            {
+                List<Evento> listaEventi = Evento.EventoSToEvento(Sessione.ServerDB.EventiFromCeo(codOrg).ToList());
+                if (listaEventi != null)
+                {
+                    return listaEventi;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo GETEVENTIFROMCEO nel controller");
+                Application.Exit();
+            }
+            return null;
+        }
+
+        //Richiedo al server una lista di utenti dell'evento di cui ho chiesto informazioni
+        public static List<Utente> GetUtentiFromEvento(int idEvento)
+        {
+            try
+            {
+                List<Utente> listaUtenti = Utente.UtenteSToUtente(Sessione.ServerDB.UtentiAquirenti(idEvento).ToList());
+                if(listaUtenti != null)
+                {
+                    return listaUtenti;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo GETUTENTIFROMEVENTO nel controller");
+                Application.Exit();
+            }
+            return null;
+        }
+
+        public static bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo)
+        {
+            try
+            {
+                return Sessione.ServerDB.AggiungiEvento(nome, genere, luogo, descrizione, nPosti, codOrg, costo);
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo AggiungiEvento nel controller");
                 Application.Exit();
             }
             return false;

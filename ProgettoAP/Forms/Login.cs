@@ -66,7 +66,6 @@ namespace ProgettoAP.Forms
                             FormInterfacciaCEO home = new FormInterfacciaCEO();
                             home.ShowDialog();
                             this.Hide();
-                            MessageBox.Show("Login ceo effettuato con successo: " + ceo.Nome);
                         }
                     }
                     else

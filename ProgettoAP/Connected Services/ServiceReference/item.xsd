@@ -148,4 +148,52 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="EventiFromCeo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codOrg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EventiFromCeoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="EventiFromCeoResult" nillable="true" type="q6:ArrayOfEventoS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtentiAquirenti">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEvento" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UtentiAquirentiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="UtentiAquirentiResult" nillable="true" type="q7:ArrayOfUtenteS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiEvento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nome" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="genere" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="luogo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="descrizione" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nPosti" type="xs:int" />
+        <xs:element minOccurs="0" name="codOrg" type="xs:int" />
+        <xs:element minOccurs="0" name="costo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AggiungiEventoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AggiungiEventoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

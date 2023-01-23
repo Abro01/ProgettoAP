@@ -44,9 +44,20 @@ namespace ProgettoAP.Models
         //Metodi
 
         //Convertitore utente server in utente client
-        public static Utente UtenteSToUUtente(UtenteS u)
+        public static Utente UtenteSToUtente(UtenteS u)
         {
             return new Utente(u.Id, u.Nome, u.Cognome, u.Username, u.Email, u.Password);
+        }
+
+        //Convertitore di una lista di utenti server in una lista di utenti client
+        public static List<Utente> UtenteSToUtente(List<UtenteS> listaUtentiS)
+        {
+            List<Utente> listU = new List<Utente>();
+            foreach (UtenteS u in listaUtentiS)
+            {
+                listU.Add(new Utente(u.Id, u.Nome, u.Cognome, u.Username, u.Email, u.Password));
+            }
+            return listU;
         }
     }
 }

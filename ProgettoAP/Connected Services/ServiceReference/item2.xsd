@@ -56,4 +56,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BigliettoS" nillable="true" type="tns:BigliettoS" />
+  <xs:complexType name="ArrayOfUtenteS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UtenteS" nillable="true" type="tns:UtenteS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUtenteS" nillable="true" type="tns:ArrayOfUtenteS" />
 </xs:schema>

@@ -77,7 +77,7 @@ namespace Server.Models
             List<EventoS> listaEventi = new List<EventoS>();
             try
             {
-                List<string> infoEvento = s.Split('\n').ToList(); //divido l'elenco per lavoratore
+                List<string> infoEvento = s.Split('\n').ToList(); //divido l'elenco per evento
 
                 infoEvento.RemoveAt(infoEvento.Count - 1); //Con l'utilizzo dello split l'ultimo valore rimane vuoto
 

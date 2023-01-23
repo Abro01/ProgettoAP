@@ -154,12 +154,6 @@
     <Compile Include="Forms\UserForm\FormImpostazioniUtente.Designer.cs">
       <DependentUpon>FormImpostazioniUtente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CEOForm\FormListaEventiCEO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CEOForm\FormListaEventiCEO.Designer.cs">
-      <DependentUpon>FormListaEventiCEO.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\UserForm\FormProfiloUtente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,9 +224,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm\FormImpostazioniUtente.resx">
       <DependentUpon>FormImpostazioniUtente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CEOForm\FormListaEventiCEO.resx">
-      <DependentUpon>FormListaEventiCEO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm\FormProfiloUtente.resx">
       <DependentUpon>FormProfiloUtente.cs</DependentUpon>

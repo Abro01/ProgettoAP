@@ -43,5 +43,14 @@ namespace Server
 
         [OperationContract]
         bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo);
+
+        [OperationContract]
+        List<EventoS> EventiFromCeo(int codOrg);
+
+        [OperationContract]
+        List<UtenteS> UtentiAquirenti(int idEvento);
+
+        [OperationContract]
+        bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo);
     }
 }

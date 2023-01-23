@@ -67,6 +67,24 @@
   <wsdl:message name="IDBService_AcquistaBiglietto_OutputMessage">
     <wsdl:part name="parameters" element="tns:AcquistaBigliettoResponse" />
   </wsdl:message>
+  <wsdl:message name="IDBService_EventiFromCeo_InputMessage">
+    <wsdl:part name="parameters" element="tns:EventiFromCeo" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_EventiFromCeo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EventiFromCeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UtentiAquirenti_InputMessage">
+    <wsdl:part name="parameters" element="tns:UtentiAquirenti" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_UtentiAquirenti_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UtentiAquirentiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AggiungiEvento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AggiungiEvento" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_AggiungiEvento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AggiungiEventoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDBService">
     <wsdl:operation name="Connessione">
       <wsdl:input wsaw:Action="http://tempuri.org/IDBService/Connessione" message="tns:IDBService_Connessione_InputMessage" />
@@ -107,6 +125,18 @@
     <wsdl:operation name="AcquistaBiglietto">
       <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AcquistaBiglietto" message="tns:IDBService_AcquistaBiglietto_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AcquistaBigliettoResponse" message="tns:IDBService_AcquistaBiglietto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EventiFromCeo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/EventiFromCeo" message="tns:IDBService_EventiFromCeo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/EventiFromCeoResponse" message="tns:IDBService_EventiFromCeo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UtentiAquirenti">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/UtentiAquirenti" message="tns:IDBService_UtentiAquirenti_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/UtentiAquirentiResponse" message="tns:IDBService_UtentiAquirenti_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AggiungiEvento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AggiungiEvento" message="tns:IDBService_AggiungiEvento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AggiungiEventoResponse" message="tns:IDBService_AggiungiEvento_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDBService" type="tns:IDBService">
@@ -194,6 +224,33 @@
     </wsdl:operation>
     <wsdl:operation name="AcquistaBiglietto">
       <soap:operation soapAction="http://tempuri.org/IDBService/AcquistaBiglietto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EventiFromCeo">
+      <soap:operation soapAction="http://tempuri.org/IDBService/EventiFromCeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UtentiAquirenti">
+      <soap:operation soapAction="http://tempuri.org/IDBService/UtentiAquirenti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AggiungiEvento">
+      <soap:operation soapAction="http://tempuri.org/IDBService/AggiungiEvento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

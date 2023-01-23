@@ -63,5 +63,29 @@ namespace Server.Models
             }
             return u;
         }
+
+        //Genero una lista di utenti
+        public static List<UtenteS> GeneraListaUtenti(string s)
+        {
+            List<UtenteS> listaUtenti = new List<UtenteS>();
+            try
+            {
+                List<string> infoUtente = s.Split('\n').ToList(); //divido l'elenco per Utente
+
+                infoUtente.RemoveAt(infoUtente.Count - 1); //Con l'utilizzo dello split l'ultimo valore rimane vuoto
+
+                foreach (string info in infoUtente)
+                {
+                    listaUtenti.Add(GeneraUtente(info));
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Errore nella generazione di una lista di Utenti con il metodo GeneraListaUtenti nel Server");
+                Application.Exit();
+            }
+
+            return listaUtenti;
+        }
     }
 }
