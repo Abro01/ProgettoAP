@@ -137,6 +137,7 @@
         <xs:element minOccurs="0" name="isPremium" type="xs:boolean" />
         <xs:element minOccurs="0" name="idEvento" type="xs:int" />
         <xs:element minOccurs="0" name="numBig" type="xs:int" />
+        <xs:element minOccurs="0" name="isCeo" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

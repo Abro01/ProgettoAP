@@ -236,7 +236,7 @@ namespace Server
             return null;
         }
 
-        public bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig)
+        public bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo)
         {
             try
             {
@@ -252,15 +252,27 @@ namespace Server
                     return false;
                 string queryAggPosti = "UPDATE eventi SET Nposti = Nposti - " + numBig + " WHERE ID = '" + idEvento + "'";
                 Interazione.WritingQuery(queryAggPosti);
+                string query;
 
-                string query = $"INSERT INTO `utenti_biglietti` (`ID`, `Premium`, `CODUtente`, `CODBiglietto`) VALUES ('','" + bigPremium + "','" + idUtente + "','" + idBig + "')";
-
-                for (int i = 1; i < numBig; i++)
+                if (isCeo) //CONTROLLO CHE L'UTENTE PASSATO SIA UN CEO ED IN QUEL CASO INTERAGISCO CON CEO_BIGLIETTI
                 {
-                    Interazione.WritingQuery(query);
+                    query = $"INSERT INTO `ceo_biglietti` (`ID`, `Premium`, `CODBiglietto`, `CODCeo`) VALUES ('','" + bigPremium + "','" + idBig + "','" + idUtente + "')";
+                    for (int i = 1; i < numBig; i++)
+                    {
+                        Interazione.WritingQuery(query);
+                    }
+                    return Interazione.WritingQuery(query);
                 }
-
-                return Interazione.WritingQuery(query);
+                else//NEL CASO SIA UN UTENTE INTERAGISCO CON LA TABELLA utenti_biglietti NEL DB
+                {
+                    query = $"INSERT INTO `utenti_biglietti` (`ID`, `Premium`, `CODUtente`, `CODBiglietto`) VALUES ('','" + bigPremium + "','" + idUtente + "','" + idBig + "')";
+                    for (int i = 1; i < numBig; i++)
+                    {
+                        Interazione.WritingQuery(query);
+                    }
+                    return Interazione.WritingQuery(query);
+                }
+                
             }
             catch(Exception ex)
             {

@@ -152,4 +152,3 @@ C:\Users\paniz\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.csproj.CoreCo
 C:\Users\paniz\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\paniz\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.exe
 C:\Users\paniz\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.pdb
-C:\Users\paniz\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.csproj.AssemblyReference.cache

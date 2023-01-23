@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProgettoAP.Models;
 
-namespace ProgettoAP.Forms.UserForm
+
+namespace ProgettoAP.Forms.CEOForm
 {
-    public partial class FormAcquistaBiglietto : Form
+    public partial class FormAcquistaBiglietto : Form // FORM PER L'ACQUISTO DEL BIGLIE TTO DA PARTE DEL CEO DI UN ORGANIZZAZIONE
     {
         public FormAcquistaBiglietto()
         {
             InitializeComponent();
-
             lblNomeEvento.Text = Sessione.Evento.Nome;
             lblGenere2.Text = Sessione.Evento.Genere;
             lblDescrizione2.Text = Sessione.Evento.Descrizione;
@@ -29,8 +29,6 @@ namespace ProgettoAP.Forms.UserForm
             lPrezzo.Text = b.Costo.ToString();
             cbNumBig.SelectedIndex = 0;
         }
-
-        
 
         private void cbNumBig_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -67,13 +65,13 @@ namespace ProgettoAP.Forms.UserForm
             }
         }
 
-        private void bAcquista_Click(object sender, EventArgs e)
+        private void bAcquista_Click_1(object sender, EventArgs e)
         {
             string app = cbNumBig.Text;
-            int numBig = Int32.Parse(app);//Prendo il numero di biglietti che l'utente vuole acquistare
+            int numBig = Int32.Parse(app);//Prendo il numero di biglietti che il CEO vuole acquistare
             try
             {
-                bool isAcquistato = Controller.AcquistaBiglietti(Sessione.Biglietto.Id, Sessione.Utente.Id, cbPremium.Checked, Sessione.Evento.Id, numBig, false);
+                bool isAcquistato = Controller.AcquistaBiglietti(Sessione.Biglietto.Id, Sessione.Ceo.Id, cbPremium.Checked, Sessione.Evento.Id, numBig, true);
                 if (isAcquistato)
                 {
                     MessageBox.Show("BIGLIETTI/O ACQUISTATI/O PERFETTAMENTE");
@@ -87,7 +85,6 @@ namespace ProgettoAP.Forms.UserForm
             {
                 MessageBox.Show("ERRORE NEL FORM DI ACQUISTA BIGLIETTO PER L'UTENTE");
             }
-            
         }
     }
 }

@@ -43,5 +43,23 @@ namespace ProgettoAP.Forms.CEOForm
         {
             (dtRisultati.DataSource as DataTable).DefaultView.RowFilter = String.Format("Nome like '%{0}%'", txtNomeEvento.Text);
         }
+
+        private void dtRisultati_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string idEvento = dtRisultati.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+            
+            List<Evento> listaEventi = Controller.GetEventi();
+
+            foreach (Evento evento in listaEventi)
+            {
+                if (evento.Id == Int16.Parse(idEvento))
+                {
+                    Sessione.Evento = evento;
+                    FormAcquistaBiglietto fab = new FormAcquistaBiglietto();
+                    fab.Show();
+                    this.Hide();
+                }
+            }
+        }
     }
 }

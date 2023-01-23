@@ -70,10 +70,10 @@ namespace ProgettoAP.ServiceReference {
         System.Threading.Tasks.Task<Server.Models.BigliettoS> GetBigliettoFromIdEventoAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/AcquistaBiglietto", ReplyAction="http://tempuri.org/IDBService/AcquistaBigliettoResponse")]
-        bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig);
+        bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/AcquistaBiglietto", ReplyAction="http://tempuri.org/IDBService/AcquistaBigliettoResponse")]
-        System.Threading.Tasks.Task<bool> AcquistaBigliettoAsync(int idBig, int idUtente, bool isPremium, int idEvento, int numBig);
+        System.Threading.Tasks.Task<bool> AcquistaBigliettoAsync(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -175,12 +175,12 @@ namespace ProgettoAP.ServiceReference {
             return base.Channel.GetBigliettoFromIdEventoAsync(id);
         }
         
-        public bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig) {
-            return base.Channel.AcquistaBiglietto(idBig, idUtente, isPremium, idEvento, numBig);
+        public bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo) {
+            return base.Channel.AcquistaBiglietto(idBig, idUtente, isPremium, idEvento, numBig, isCeo);
         }
         
-        public System.Threading.Tasks.Task<bool> AcquistaBigliettoAsync(int idBig, int idUtente, bool isPremium, int idEvento, int numBig) {
-            return base.Channel.AcquistaBigliettoAsync(idBig, idUtente, isPremium, idEvento, numBig);
+        public System.Threading.Tasks.Task<bool> AcquistaBigliettoAsync(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo) {
+            return base.Channel.AcquistaBigliettoAsync(idBig, idUtente, isPremium, idEvento, numBig, isCeo);
         }
     }
 }

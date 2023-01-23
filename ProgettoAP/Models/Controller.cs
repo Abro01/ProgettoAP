@@ -156,13 +156,13 @@ namespace ProgettoAP.Models
             return null;
         }
 
-        public static bool AcquistaBiglietti(int idBig, int idUtente, bool isPremium, int idEvento, int numBig) 
+        public static bool AcquistaBiglietti(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo) 
         {
             try
             {
-                return Sessione.ServerDB.AcquistaBiglietto(idBig, idUtente, isPremium, idEvento, numBig);
-            }
-            catch
+                return Sessione.ServerDB.AcquistaBiglietto(idBig, idUtente, isPremium, idEvento, numBig, isCeo);// PASSO AL SERVER l'id del biglietto che voglio acquistare, l'id del utente/ceo
+            }                                                                                                   //se desidero un biglietto premium, l'id dell'evento pe cui voglio acquistare il biglietto
+            catch                                                                                               //il numero di biglietti che desidero acquistare e se il mio account è un account ceo o utente normale
             {
                 MessageBox.Show("ERRORE! Metodo AcquistaBiglietti nel controller");
                 Application.Exit();

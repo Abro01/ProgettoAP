@@ -58,6 +58,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Elementi\ThemeColor.cs" />
+    <Compile Include="Forms\CEOForm\FormAcquistaBiglietto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CEOForm\FormAcquistaBiglietto.Designer.cs">
+      <DependentUpon>FormAcquistaBiglietto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CEOForm\FormAcquistaCEO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,7 @@
       <DependentUpon>FormRicercaUtente.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Biglietto.cs" />
+    <Compile Include="Models\ceo_biglietti.cs" />
     <Compile Include="Models\Ceo_organizzazioni.cs" />
     <Compile Include="Models\Controller.cs" />
     <Compile Include="Models\Evento.cs" />
@@ -176,6 +183,9 @@
     <Compile Include="Models\Utenti_biglietti.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CEOForm\FormAcquistaBiglietto.resx">
+      <DependentUpon>FormAcquistaBiglietto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CEOForm\FormAcquistaCEO.resx">
       <DependentUpon>FormAcquistaCEO.cs</DependentUpon>
     </EmbeddedResource>
