@@ -50,7 +50,7 @@
             this.dtUtenti.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtUtenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtUtenti.Location = new System.Drawing.Point(174, 160);
-            this.dtUtenti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtUtenti.Margin = new System.Windows.Forms.Padding(2);
             this.dtUtenti.Name = "dtUtenti";
             this.dtUtenti.RowHeadersWidth = 62;
             this.dtUtenti.RowTemplate.Height = 28;
@@ -65,7 +65,7 @@
             this.ClientSize = new System.Drawing.Size(901, 463);
             this.Controls.Add(this.lblTitolo);
             this.Controls.Add(this.dtUtenti);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormInfoEventiCEO";
             this.Text = "FormInfoEventiCEO";
             this.Load += new System.EventHandler(this.FormInfoEventiCEO_Load);

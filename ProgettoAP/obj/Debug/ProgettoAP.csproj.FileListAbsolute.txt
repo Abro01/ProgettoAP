@@ -167,7 +167,6 @@ C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\System.Runtime.C
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\System.Buffers.dll
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.AssemblyReference.cache
-C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.CEOForm.FormAcquistaCEO.resources
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.CEOForm.FormAggiuntaEventoCEO.resources
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.CEOForm.FormHomeCEO.resources
 C:\Users\paniz\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.CEOForm.FormImpostazioniCEO.resources

@@ -64,12 +64,6 @@
     <Compile Include="Forms\CEOForm\FormAcquistaBiglietto.Designer.cs">
       <DependentUpon>FormAcquistaBiglietto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CEOForm\FormAcquistaCEO.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CEOForm\FormAcquistaCEO.Designer.cs">
-      <DependentUpon>FormAcquistaCEO.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\CEOForm\FormAggiuntaEventoCEO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,9 +173,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\CEOForm\FormAcquistaBiglietto.resx">
       <DependentUpon>FormAcquistaBiglietto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\CEOForm\FormAcquistaCEO.resx">
-      <DependentUpon>FormAcquistaCEO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CEOForm\FormAggiuntaEventoCEO.resx">
       <DependentUpon>FormAggiuntaEventoCEO.cs</DependentUpon>

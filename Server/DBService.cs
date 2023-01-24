@@ -256,7 +256,7 @@ namespace Server
 
                 if (isCeo) //CONTROLLO CHE L'UTENTE PASSATO SIA UN CEO ED IN QUEL CASO INTERAGISCO CON CEO_BIGLIETTI
                 {
-                    query = $"INSERT INTO `ceo_biglietti` (`ID`, `Premium`, `CODBiglietto`, `CODCeo`) VALUES ('','" + bigPremium + "','" + idBig + "','" + idUtente + "')";
+                    query = $"INSERT INTO `ceo_biglietti` (`ID`, `Premium`, `CODCeo`, `CODBiglietto`) VALUES ('','" + bigPremium + "','" + idUtente + "','" + idBig + "')";
                     for (int i = 1; i < numBig; i++)
                     {
                         Interazione.WritingQuery(query);
@@ -353,5 +353,47 @@ namespace Server
             }
             return false;
         }
+
+        public bool ModificaUtente(string nome, string cognome, string username, string email, int id)
+        {
+            try
+            {
+                string query = "UPDATE utenti " +
+                               "SET Nome = '" + nome + "', Cognome = '" + cognome + "', Username = '" + username + "', Email = '" + email + "' " +
+                               "WHERE ID = '" + id + "'";
+                return Interazione.WritingQuery(query);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER L'AGGIORNAMENTO DEI DATI DI UN UTENTE: " + ex.ToString());
+                Console.ReadLine();
+            }
+            finally
+            {
+                Console.WriteLine("Dati per l'utente Modificati con successo");
+            }
+            return false;
+        }
+        public bool ModificaCeo(string nome, string cognome, string email, int id)
+        {
+            try
+            {
+                string query = "UPDATE ceo_organizzazioni " +
+                               "SET Nome = '" + nome + "', Cognome = '" + cognome + "', Email = '" + email + "' " +
+                               "WHERE ID = '" + id + "'";
+                return Interazione.WritingQuery(query);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER L'AGGIORNAMENTO DEI DATI DI UN CEO: " + ex.ToString());
+                Console.ReadLine();
+            }
+            finally
+            {
+                Console.WriteLine("Dati per il CEO Modificati con successo");
+            }
+            return false;
+        }
+
     }
 }

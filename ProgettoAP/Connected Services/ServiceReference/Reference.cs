@@ -92,6 +92,18 @@ namespace ProgettoAP.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/AggiungiEvento", ReplyAction="http://tempuri.org/IDBService/AggiungiEventoResponse")]
         System.Threading.Tasks.Task<bool> AggiungiEventoAsync(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/ModificaUtente", ReplyAction="http://tempuri.org/IDBService/ModificaUtenteResponse")]
+        bool ModificaUtente(string nome, string cognome, string username, string email, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/ModificaUtente", ReplyAction="http://tempuri.org/IDBService/ModificaUtenteResponse")]
+        System.Threading.Tasks.Task<bool> ModificaUtenteAsync(string nome, string cognome, string username, string email, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/ModificaCeo", ReplyAction="http://tempuri.org/IDBService/ModificaCeoResponse")]
+        bool ModificaCeo(string nome, string cognome, string email, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/ModificaCeo", ReplyAction="http://tempuri.org/IDBService/ModificaCeoResponse")]
+        System.Threading.Tasks.Task<bool> ModificaCeoAsync(string nome, string cognome, string email, int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -223,6 +235,22 @@ namespace ProgettoAP.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> AggiungiEventoAsync(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo) {
             return base.Channel.AggiungiEventoAsync(nome, genere, luogo, descrizione, nPosti, codOrg, costo);
+        }
+        
+        public bool ModificaUtente(string nome, string cognome, string username, string email, int id) {
+            return base.Channel.ModificaUtente(nome, cognome, username, email, id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ModificaUtenteAsync(string nome, string cognome, string username, string email, int id) {
+            return base.Channel.ModificaUtenteAsync(nome, cognome, username, email, id);
+        }
+        
+        public bool ModificaCeo(string nome, string cognome, string email, int id) {
+            return base.Channel.ModificaCeo(nome, cognome, email, id);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ModificaCeoAsync(string nome, string cognome, string email, int id) {
+            return base.Channel.ModificaCeoAsync(nome, cognome, email, id);
         }
     }
 }

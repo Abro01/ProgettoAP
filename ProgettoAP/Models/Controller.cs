@@ -220,6 +220,26 @@ namespace ProgettoAP.Models
             }
             return false;
         }
+        public static bool Modifica(string  nome, string cognome, string username, string email, int id, bool isCeo)
+        {
+            try
+            {
+                if (isCeo)
+                {
+                    return Sessione.ServerDB.ModificaCeo(nome, cognome, email, id);
+                }
+                else
+                {
+                    return Sessione.ServerDB.ModificaUtente(nome, cognome, username, email, id);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo ModificaCeo o Utente  nel controller");
+                Application.Exit();
+            }
+            return false;
+        }
     }
 }
 

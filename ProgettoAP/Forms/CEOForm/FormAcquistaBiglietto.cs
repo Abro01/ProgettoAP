@@ -75,6 +75,7 @@ namespace ProgettoAP.Forms.CEOForm
                 if (isAcquistato)
                 {
                     MessageBox.Show("BIGLIETTI/O ACQUISTATI/O PERFETTAMENTE");
+                    this.Hide();
                 }
                 else
                 {

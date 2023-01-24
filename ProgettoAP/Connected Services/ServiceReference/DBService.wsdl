@@ -85,6 +85,18 @@
   <wsdl:message name="IDBService_AggiungiEvento_OutputMessage">
     <wsdl:part name="parameters" element="tns:AggiungiEventoResponse" />
   </wsdl:message>
+  <wsdl:message name="IDBService_ModificaUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaUtente" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_ModificaUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaUtenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_ModificaCeo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaCeo" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_ModificaCeo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModificaCeoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDBService">
     <wsdl:operation name="Connessione">
       <wsdl:input wsaw:Action="http://tempuri.org/IDBService/Connessione" message="tns:IDBService_Connessione_InputMessage" />
@@ -137,6 +149,14 @@
     <wsdl:operation name="AggiungiEvento">
       <wsdl:input wsaw:Action="http://tempuri.org/IDBService/AggiungiEvento" message="tns:IDBService_AggiungiEvento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDBService/AggiungiEventoResponse" message="tns:IDBService_AggiungiEvento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaUtente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/ModificaUtente" message="tns:IDBService_ModificaUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/ModificaUtenteResponse" message="tns:IDBService_ModificaUtente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaCeo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/ModificaCeo" message="tns:IDBService_ModificaCeo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/ModificaCeoResponse" message="tns:IDBService_ModificaCeo_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDBService" type="tns:IDBService">
@@ -251,6 +271,24 @@
     </wsdl:operation>
     <wsdl:operation name="AggiungiEvento">
       <soap:operation soapAction="http://tempuri.org/IDBService/AggiungiEvento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaUtente">
+      <soap:operation soapAction="http://tempuri.org/IDBService/ModificaUtente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaCeo">
+      <soap:operation soapAction="http://tempuri.org/IDBService/ModificaCeo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

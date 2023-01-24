@@ -52,5 +52,12 @@ namespace Server
 
         [OperationContract]
         bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo);
+
+        [OperationContract]
+        bool ModificaUtente(string nome, string cognome, string username, string email, int id);
+
+        [OperationContract]
+        bool ModificaCeo(string nome, string cognome, string email, int id);
+
     }
 }
