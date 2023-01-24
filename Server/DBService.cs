@@ -156,6 +156,7 @@ namespace Server
             return null;
         }
 
+        //Ritorno un organizzazione tramite il suo id
         public OrganizzazioneS GetOrganizzazioneFromId(int id)
         {
             string q = "SELECT o.* " +
@@ -185,11 +186,12 @@ namespace Server
             return null;
         }
 
+        //Registrazione ceo e utente sul db
         public bool Registrazione(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg)
         {
             try
             {
-                if (isOrganizzatore)
+                if (isOrganizzatore)//Controllo se vuole fare la registrazione un ceo di un organizzazione
                 {
                     string qIdOrg = "SELECT ID " +
                                     "FROM organizzazione " +
@@ -204,7 +206,7 @@ namespace Server
                         return Interazione.WritingQuery(query);
                     }
                 }
-                else
+                else//Se non è un CEO registro un utente
                 {
                     string query = $"INSERT INTO `utenti` (`ID`, `Nome`, `Cognome`, `Username`, `Email`, `Password`) VALUES ('', '" + nome + "', '" + cognome + "', '" + username + "', '" + email + "', MD5('" + password + "'));";           //INSERIMENTO DATI
                     return Interazione.WritingQuery(query);
@@ -217,7 +219,9 @@ namespace Server
             }
             return false;
         }
-        public List<EventoS> EventiDisponibili()
+
+
+        public List<EventoS> EventiDisponibili()//Ritorno tutti gli eventi disponibili sul sito
         {
             try
             {
@@ -235,7 +239,7 @@ namespace Server
             }
             return null;
         }
-
+        //Acquisto biglietti per ceo o utente
         public bool AcquistaBiglietto(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo)
         {
             try
@@ -300,8 +304,8 @@ namespace Server
             }
             return null;
         }
-
-        public List<UtenteS> UtentiAquirenti(int idEvento)
+        //Ritorno una lista di utenti che hanno acquistato un biglietto per un determinato evento
+        public List<UtenteS> UtentiAquirenti(int idEvento) 
         {
             try
             {
@@ -318,11 +322,32 @@ namespace Server
             }
             finally
             {
-                Console.WriteLine("Dati per gli eventi disponibili da un ceo recuperati con successo");
+                Console.WriteLine("Dati per gli utenti che hanno acquistato un determinato biglietto di un evento presi con successo");
             }
             return null;
         }
 
+        //Ritorno una lista di ceo che hanno acquistato un biglietto per un determinato evento
+        public List<Ceo_organizzazioniS> CeoFromEvento(int idEvento)
+        {
+            try
+            {
+                string query = "SELECT c.ID, c.Nome, c.Cognome, c.Email, c.Password, c.CODOrganizzazione " +
+                                "FROM ceo_organizzazioni c, biglietti b, ceo_biglietti cb " +    //CERCO LE INFORMAZIONI DEI CEO CHE CHE HANNO ACQUISTATO DEI  BIGLIETTI PER UN CERTO EVENTO SELEZIONATO
+                                "WHERE b.ID=cb.CODBiglietto AND cb.CODCeo=c.ID " +   //TRAMITE L'ID DELL'EVENTO
+                                "AND b.CODEvento = '" + idEvento + "'";
+                return Ceo_organizzazioniS.GeneraListaCeo(Interazione.GetInfo(query));
+            }
+            catch (Exception ex){
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA RICERCA DEI CEO ACQUIRENTI DI UN CERTO EVENTO: " + ex.ToString());
+                Console.ReadLine();
+            }
+            finally
+            {
+                Console.WriteLine("Dati per i ceo che hanno acquistato un biglietto per un deteminato evento con successo");
+            }
+            return null;
+        }
         public bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo)
         {
             try

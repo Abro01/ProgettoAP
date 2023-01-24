@@ -12,7 +12,7 @@ using ProgettoAP.Models;
 
 namespace ProgettoAP.Forms.CEOForm
 {
-    public partial class FormAcquistaBiglietto : Form // FORM PER L'ACQUISTO DEL BIGLIE TTO DA PARTE DEL CEO DI UN ORGANIZZAZIONE
+    public partial class FormAcquistaBiglietto : Form // FORM PER L'ACQUISTO DEL BIGLIETTO DA PARTE DEL CEO DI UN ORGANIZZAZIONE
     {
         public FormAcquistaBiglietto()
         {
@@ -70,7 +70,7 @@ namespace ProgettoAP.Forms.CEOForm
             string app = cbNumBig.Text;
             int numBig = Int32.Parse(app);//Prendo il numero di biglietti che il CEO vuole acquistare
             try
-            {
+            {//Richiedo tramite il controller di acquistare un biglietto e di aggiornare il database
                 bool isAcquistato = Controller.AcquistaBiglietti(Sessione.Biglietto.Id, Sessione.Ceo.Id, cbPremium.Checked, Sessione.Evento.Id, numBig, true);
                 if (isAcquistato)
                 {

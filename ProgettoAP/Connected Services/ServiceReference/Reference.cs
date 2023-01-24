@@ -87,6 +87,12 @@ namespace ProgettoAP.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/UtentiAquirenti", ReplyAction="http://tempuri.org/IDBService/UtentiAquirentiResponse")]
         System.Threading.Tasks.Task<Server.Models.UtenteS[]> UtentiAquirentiAsync(int idEvento);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/CeoFromEvento", ReplyAction="http://tempuri.org/IDBService/CeoFromEventoResponse")]
+        Server.Models.Ceo_organizzazioniS[] CeoFromEvento(int idEvento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/CeoFromEvento", ReplyAction="http://tempuri.org/IDBService/CeoFromEventoResponse")]
+        System.Threading.Tasks.Task<Server.Models.Ceo_organizzazioniS[]> CeoFromEventoAsync(int idEvento);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/AggiungiEvento", ReplyAction="http://tempuri.org/IDBService/AggiungiEventoResponse")]
         bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo);
         
@@ -227,6 +233,14 @@ namespace ProgettoAP.ServiceReference {
         
         public System.Threading.Tasks.Task<Server.Models.UtenteS[]> UtentiAquirentiAsync(int idEvento) {
             return base.Channel.UtentiAquirentiAsync(idEvento);
+        }
+        
+        public Server.Models.Ceo_organizzazioniS[] CeoFromEvento(int idEvento) {
+            return base.Channel.CeoFromEvento(idEvento);
+        }
+        
+        public System.Threading.Tasks.Task<Server.Models.Ceo_organizzazioniS[]> CeoFromEventoAsync(int idEvento) {
+            return base.Channel.CeoFromEventoAsync(idEvento);
         }
         
         public bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo) {

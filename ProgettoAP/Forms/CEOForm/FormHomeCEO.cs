@@ -12,7 +12,7 @@ namespace ProgettoAP.Forms.CEOForm
 {
     public partial class FormHomeCEO : Form
     {
-        public FormHomeCEO()
+        public FormHomeCEO()//HOMEPAGE IN CUI C'E UNA SEMPLICE DESCRIZIONE DEL SITO
         {
             InitializeComponent();
         }

@@ -42,5 +42,16 @@ namespace ProgettoAP.Models
             return new Ceo_organizzazioni(c.Id, c.Nome, c.Cognome, c.Email, c.Password, c.CodOrganizzazione);
 
         }
+
+        //Convertitore di una lista di Ceo server in una lista di ceo client
+        public static List<Ceo_organizzazioni> CeoSToCeo(List<Ceo_organizzazioniS> listaCeoS)
+        {
+            List<Ceo_organizzazioni> listC = new List<Ceo_organizzazioni>();
+            foreach (Ceo_organizzazioniS c in listaCeoS)
+            {
+                listC.Add(new Ceo_organizzazioni(c.Id, c.Nome, c.Cognome,  c.Email, c.Password, c.CodOrganizzazione));
+            }
+            return listC;
+        }
     }
 }

@@ -51,6 +51,9 @@ namespace Server
         List<UtenteS> UtentiAquirenti(int idEvento);
 
         [OperationContract]
+        List<Ceo_organizzazioniS> CeoFromEvento(int idEvento);
+
+        [OperationContract]
         bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo);
 
         [OperationContract]

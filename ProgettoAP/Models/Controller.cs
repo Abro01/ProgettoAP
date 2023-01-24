@@ -22,7 +22,7 @@ namespace ProgettoAP.Models
             else
                 return false;
         }
-
+        //RICHIEDE UN UTENTE TRAMITE EMAIL E PASSWORD PER IL LOGIN 
         public static Utente getInfoUser(string email, string psw)
         {
             try
@@ -42,7 +42,7 @@ namespace ProgettoAP.Models
             }
             return null;
         }
-
+        //RICHIEDE UN CEO TRAMITE EMAIL E PASSWORD PER IL LOGIN
         public static Ceo_organizzazioni getInfoCeo(string email, string psw){
             try
             {
@@ -60,6 +60,7 @@ namespace ProgettoAP.Models
             }
             return null;
         }
+        //METODO PER IL LOGIN DEL CEO
         public static bool EffettuaLoginCeo(string email, string psw)
         {
             if(Sessione.ServerDB.Login(email, psw, true))
@@ -68,13 +69,14 @@ namespace ProgettoAP.Models
             }
             return false;
         }
-
+        //METODO CHE RICHEIDE IL NOME DI TUTTE LE ORGANIZZAZIONI PER LA SCELTA IN FASE DI REGISTRAZIONE PER IL CEO, PER AGGIUNGERE UN ORGANIZZAZIONE RIVOLGERSI AI PROGETTISTI
         public static string GetNomeOrganizzazioni()
         {
             string s = Sessione.ServerDB.GetNomiOrganizzazioni();
             return s;
         }
 
+        //METODO CHE RICHIEDE UN ORGANIZZAZIONE TRAMITE IL SUO ID 
         public static Organizzazione GetOrganizzazioneFromID(int id)
         {
             try
@@ -92,7 +94,7 @@ namespace ProgettoAP.Models
             }
             return null;
         }
-        
+        //METODO CHE RICHIEDE UN BIGLIETTO TRAMITE IL SUO ID 
         public static Biglietto GetBigliettoFromIdEvento(int id)
         {
             try
@@ -110,7 +112,7 @@ namespace ProgettoAP.Models
             }
             return null;
         }
-
+        //METODO CHE INTERAGISCE CON IL SERVER PER REGISTRARE UN UTENTE
         public static bool RegistraUtente(string nome, string cognome, string username, string email, string password)
         {
             try
@@ -124,7 +126,7 @@ namespace ProgettoAP.Models
             }
             return false;
         }
-
+        //METODO CHE INTERAGISCE CON IL SERVER PER REGISTRARE UN CEO 
         public static bool RegistraCeo(string nome, string cognome, string email, string password, string nomeOrg)
         {
             try
@@ -138,6 +140,7 @@ namespace ProgettoAP.Models
             }
             return false;
         }
+        //RICHIEDO AL SERVER UNA LISTA DI TUTTI GLI EVENTI DISPONIBILI
         public static List<Evento> GetEventi()
         {
             try
@@ -156,6 +159,7 @@ namespace ProgettoAP.Models
             return null;
         }
 
+       
         public static bool AcquistaBiglietti(int idBig, int idUtente, bool isPremium, int idEvento, int numBig, bool isCeo) 
         {
             try
@@ -170,6 +174,7 @@ namespace ProgettoAP.Models
             return false;
         }
 
+        //RICHIEDO AL SERVER I DATI PER GLI EVENTI TRAMITE IL CODICE  DELL'ORGANIZZAZIONE DEL CEO CHE HA EFFETTUATO IL LOGIN
         public static List<Evento> GetEventiFromCeo(int codOrg)
         {
             try
@@ -188,7 +193,7 @@ namespace ProgettoAP.Models
             return null;
         }
 
-        //Richiedo al server una lista di utenti dell'evento di cui ho chiesto informazioni
+        //Richiedo al server una lista di utenti dell'evento di cui ho bisogno di informazioni
         public static List<Utente> GetUtentiFromEvento(int idEvento)
         {
             try
@@ -207,6 +212,25 @@ namespace ProgettoAP.Models
             return null;
         }
 
+        //Richiedo al server una lista di CEO dell'evento di cui ho bisogno di  informazioni
+        public static List<Ceo_organizzazioni> GetCeoFromEvento(int idEvento)
+        {
+            try
+            {
+                List<Ceo_organizzazioni> listaCeo = Ceo_organizzazioni.CeoSToCeo(Sessione.ServerDB.CeoFromEvento(idEvento).ToList());
+                if (listaCeo != null)
+                {
+                   return listaCeo;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo GETUTENTIFROMEVENTO nel controller");
+                Application.Exit();
+            }
+            return null;
+        }
+        //VENGONO PASSATE TUTTE LE INFORMAZIONI PER L'AGGIUNTA DELL'EVENTO AL DATABASE CHE POI FARA' LA QUERY
         public static bool AggiungiEvento(string nome, string genere, string luogo, string descrizione, int nPosti, int codOrg, int costo)
         {
             try
@@ -220,6 +244,8 @@ namespace ProgettoAP.Models
             }
             return false;
         }
+
+        //VENGONO PASSATE TUTTE LE INFORMAZIONI PER LA MODIFICA DI UN CEO O DI UN UTENTE AL DATABASE
         public static bool Modifica(string  nome, string cognome, string username, string email, int id, bool isCeo)
         {
             try

@@ -60,5 +60,29 @@ namespace Server.Models
             return c;
         }
 
+        //Genero una lista di cEO
+        public static List<Ceo_organizzazioniS> GeneraListaCeo(string s)
+        {
+            List<Ceo_organizzazioniS> listaCeo = new List<Ceo_organizzazioniS>();
+            try
+            {
+                List<string> infoCeo = s.Split('\n').ToList(); //divido l'elenco per Ceo
+
+                infoCeo.RemoveAt(infoCeo.Count - 1); //Con l'utilizzo dello split l'ultimo valore rimane vuoto
+
+                foreach (string info in infoCeo)
+                {
+                    listaCeo.Add(GeneraCeo(info));
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Errore nella generazione di una lista di Ceo con il metodo GeneraListaUtenti nel Server");
+                Application.Exit();
+            }
+
+            return listaCeo;
+        }
+
     }
 }

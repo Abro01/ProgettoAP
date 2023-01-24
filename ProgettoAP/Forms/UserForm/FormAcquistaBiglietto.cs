@@ -72,11 +72,12 @@ namespace ProgettoAP.Forms.UserForm
             string app = cbNumBig.Text;
             int numBig = Int32.Parse(app);//Prendo il numero di biglietti che l'utente vuole acquistare
             try
-            {
+            {//Richiedo tramite il controller di acquistare un biglietto e di aggiornare il database
                 bool isAcquistato = Controller.AcquistaBiglietti(Sessione.Biglietto.Id, Sessione.Utente.Id, cbPremium.Checked, Sessione.Evento.Id, numBig, false);
                 if (isAcquistato)
                 {
                     MessageBox.Show("BIGLIETTI/O ACQUISTATI/O PERFETTAMENTE");
+                    this.Hide();
                 }
                 else
                 {

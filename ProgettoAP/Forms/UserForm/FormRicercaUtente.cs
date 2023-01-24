@@ -39,13 +39,6 @@ namespace ProgettoAP.Forms.UserForm
             }
         }
 
-        private void bCerca_Click(object sender, EventArgs e)
-        {
-            
-            (dtRisultati.DataSource as DataTable).DefaultView.RowFilter = String.Format("Nome like '%{0}%'", txtNomeEvento.Text);
-
-        }
-
         private void dtRisultati_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string idEvento = dtRisultati.Rows[e.RowIndex].Cells["Id"].Value.ToString();

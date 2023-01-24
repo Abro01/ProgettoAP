@@ -176,6 +176,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CeoFromEvento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idEvento" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CeoFromEventoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="CeoFromEventoResult" nillable="true" type="q8:ArrayOfCeo_organizzazioniS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AggiungiEvento">
     <xs:complexType>
       <xs:sequence>

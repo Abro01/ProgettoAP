@@ -53,7 +53,7 @@ namespace ProgettoAP.Forms
         {
             if (checkBoxOrg.Checked)
             {
-                string nomeOrg = this.cbOrg.GetItemText(this.cbOrg.SelectedItem);
+                string nomeOrg = this.cbOrg.GetItemText(this.cbOrg.SelectedItem); //Controllo che tutti i campi siano compilati
                 if ((String.IsNullOrEmpty(tbEmail.Text)) || (String.IsNullOrEmpty(tbPassword.Text)) || (String.IsNullOrEmpty(tbNome.Text)) || (String.IsNullOrEmpty(tbCognome.Text)))
                 {
                     MessageBox.Show("E' necessario compilare tutti i campi");
@@ -61,7 +61,7 @@ namespace ProgettoAP.Forms
                 else
                 {
                     try
-                    {
+                    {//SE E' UN CEO CHE SI VUOLE REGISTRARE SI MANDA LA RICHIESTA AL CONTROLLER
                         if (Controller.RegistraCeo(tbNome.Text, tbCognome.Text, tbEmail.Text, tbPassword.Text, nomeOrg.Remove(0, 1)))
                         {
                             MessageBox.Show("Registrazione effettuata con successo");
@@ -86,7 +86,7 @@ namespace ProgettoAP.Forms
                 else
                 {
                     try
-                    {
+                    {//SE E' UN UTENTE CHE SI VUOLE REGISTRARE SI MANDA LA RICHIESTA DI REGISTRAZIONE AL CONTROLLER 
                         if (Controller.RegistraUtente(tbNome.Text, tbCognome.Text, tbUser.Text, tbEmail.Text, tbPassword.Text))
                         {
                             MessageBox.Show("Registrazione Effettuata con successo");

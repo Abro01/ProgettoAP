@@ -22,7 +22,7 @@ namespace ProgettoAP.Forms.CEOForm
         {
             DataTable dt = new DataTable();
             try
-            {
+            {//RICHIEDO UNA LISTA DI TUTTI GLI EVENTI CHE HA CREATO IL CEO LOGGATO
                 List<Evento> listaEventi = Controller.GetEventiFromCeo(Sessione.Ceo.CodOrganizzazione);
                 dtRisultati.DataSource = listaEventi;
                 DataGridViewButtonColumn btn = new DataGridViewButtonColumn();

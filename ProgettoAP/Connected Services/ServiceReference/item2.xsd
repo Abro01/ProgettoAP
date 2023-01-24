@@ -62,4 +62,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUtenteS" nillable="true" type="tns:ArrayOfUtenteS" />
+  <xs:complexType name="ArrayOfCeo_organizzazioniS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ceo_organizzazioniS" nillable="true" type="tns:Ceo_organizzazioniS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCeo_organizzazioniS" nillable="true" type="tns:ArrayOfCeo_organizzazioniS" />
 </xs:schema>
